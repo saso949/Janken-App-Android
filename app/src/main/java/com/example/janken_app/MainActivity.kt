@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
 
             // つまみがタッチされた時に呼ばれる
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                parcentView.text = "タッチされました。"
             }
 
             // つまみが離された時に呼ばれる
