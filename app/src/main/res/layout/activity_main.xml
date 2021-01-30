@@ -15,7 +15,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
@@ -27,7 +27,7 @@
         app:layout_constraintVertical_bias="0.866"
         app:srcCompat="@drawable/janken_gu" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.866"
         app:srcCompat="@drawable/janken_choki" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
@@ -52,16 +52,17 @@
         app:srcCompat="@drawable/janken_pa" />
 
     <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="363dp"
-        android:layout_height="20dp"
+        android:id="@+id/seekBar"
+        android:layout_width="362dp"
+        android:layout_height="22dp"
         android:max="100"
         android:progress="0"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintVertical_bias="0.047" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
