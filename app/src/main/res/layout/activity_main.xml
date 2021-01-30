@@ -11,7 +11,7 @@
         android:id="@+id/parcentView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="0%"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -19,11 +19,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.021" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <ImageButton
+        android:id="@+id/paButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -32,11 +33,12 @@
         app:layout_constraintVertical_bias="0.866"
         app:srcCompat="@drawable/janken_gu" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <ImageButton
+        android:id="@+id/chokiButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -45,11 +47,12 @@
         app:layout_constraintVertical_bias="0.866"
         app:srcCompat="@drawable/janken_choki" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <ImageButton
+        android:id="@+id/guButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintLeft_toLeftOf="parent"
