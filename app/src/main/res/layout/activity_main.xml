@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.021" />
 
     <ImageButton
-        android:id="@+id/paButton"
+        android:id="@+id/guButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
@@ -48,7 +48,7 @@
         app:srcCompat="@drawable/janken_choki" />
 
     <ImageButton
-        android:id="@+id/guButton"
+        android:id="@+id/paButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"

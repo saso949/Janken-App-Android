@@ -33,25 +33,6 @@ class MainActivity : AppCompatActivity() {
             var a = (0..100).random()
             if (a <= b){
                 resultText.text = "勝ち"
-                enemyText.text = "パー"
-            }else if(a >= b) {
-                var c = 100 - b
-                var d = c / 2
-                var e = (0..c).random()
-                if (e >= d){
-                    resultText.text = "アイコ"
-                    enemyText.text = "グー"
-                }else if (e <= d){
-                    resultText.text = "負け"
-                    enemyText.text = "チョキ"
-                }
-            }
-        }
-
-        paButton.setOnClickListener(){
-            var a = (0..100).random()
-            if (a <= b){
-                resultText.text = "勝ち"
                 enemyText.text = "チョキ"
             }else if(a >= b) {
                 var c = 100 - b
@@ -59,15 +40,15 @@ class MainActivity : AppCompatActivity() {
                 var e = (0..c).random()
                 if (e >= d){
                     resultText.text = "アイコ"
-                    enemyText.text = "パー"
+                    enemyText.text = "グー"
                 }else if (e <= d){
                     resultText.text = "負け"
-                    enemyText.text = "グー"
+                    enemyText.text = "パー"
                 }
             }
         }
 
-        chokiButton.setOnClickListener(){
+        paButton.setOnClickListener(){
             var a = (0..100).random()
             if (a <= b){
                 resultText.text = "勝ち"
@@ -78,10 +59,29 @@ class MainActivity : AppCompatActivity() {
                 var e = (0..c).random()
                 if (e >= d){
                     resultText.text = "アイコ"
+                    enemyText.text = "パー"
+                }else if (e <= d){
+                    resultText.text = "負け"
+                    enemyText.text = "チョキ"
+                }
+            }
+        }
+
+        chokiButton.setOnClickListener(){
+            var a = (0..100).random()
+            if (a <= b){
+                resultText.text = "勝ち"
+                enemyText.text = "パー"
+            }else if(a >= b) {
+                var c = 100 - b
+                var d = c / 2
+                var e = (0..c).random()
+                if (e >= d){
+                    resultText.text = "アイコ"
                     enemyText.text = "チョキ"
                 }else if (e <= d){
                     resultText.text = "負け"
-                    enemyText.text = "パー"
+                    enemyText.text = "グー"
                 }
             }
         }
