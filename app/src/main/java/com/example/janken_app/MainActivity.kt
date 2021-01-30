@@ -11,9 +11,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+
             // 値が変更された時に呼ばれる
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 parcentView.text = progress.toString() + "%"
+            }
+
+            // つまみがタッチされた時に呼ばれる
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                parcentView.text = "タッチされました。"
+            }
+
+            // つまみが離された時に呼ばれる
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
         })
 
