@@ -104,8 +104,8 @@
 
     <TextView
         android:id="@+id/resultText"
-        android:layout_width="278dp"
-        android:layout_height="173dp"
+        android:layout_width="408dp"
+        android:layout_height="171dp"
         android:gravity="center"
         android:text="結果"
         android:textSize="100dp"
