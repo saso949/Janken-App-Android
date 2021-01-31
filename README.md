@@ -37,8 +37,6 @@ AndroidStudioでJanken-App-Androidプロジェクトを作成し、そのプロ�
 3.seekbarの下に相手の手が表示され、真ん中にじゃんけんの勝敗が表示されます。
 </h4>
 
-![スクリーンショット 2021-01-31 16 54 42](https://user-images.githubusercontent.com/77558509/106378084-0b1c5980-63e5-11eb-8d7b-e51d33080cb5.png)
-
 
 <h4>
 4.seekbarを操作し色々な確率でじゃんけんができます。
