@@ -18,17 +18,31 @@ class MainActivity : AppCompatActivity() {
         var count = ""
         var wincount = 0
 
+
         val readFile = File(applicationContext.filesDir,"count.txt")
         if(readFile.exists()){
             val contents = readFile.bufferedReader().use(BufferedReader::readText)
             count = contents
         }
 
+
+
+        var fileWin = "winCount.txt"
+        
+
+        var fileee = File(applicationContext.filesDir,"winCount.txt")
+        if (fileee.exists()){
+            val contents2 = fileee.bufferedReader().use(BufferedReader::readText)
+            wincount = contents2.toInt()
+        }
+        winText.text = "勝った回数" + wincount.toString() + "回"
+
+
         if (count == "on"){
-            winCount.visibility = View.VISIBLE
+            winText.visibility = View.VISIBLE
 
         }else{
-            winCount.visibility = View.INVISIBLE
+            winText.visibility = View.INVISIBLE
         }
 
 
@@ -56,7 +70,10 @@ class MainActivity : AppCompatActivity() {
                 resultText.text = "勝ち"
                 enemyText.text = "チョキ"
                 wincount += 1
-                winCount.text = "勝った回数" + wincount.toString() + "回"
+                winText.text = "勝った回数" + wincount.toString() + "回"
+                File(applicationContext.filesDir, fileWin).writer().use {
+                    it.write(wincount)
+                }
 
             }else if(a >= b) {
                 var c = 100 - b
@@ -78,7 +95,10 @@ class MainActivity : AppCompatActivity() {
                 resultText.text = "勝ち"
                 enemyText.text = "グー"
                 wincount += 1
-                winCount.text = "勝った回数" + wincount.toString() + "回"
+                winText.text = "勝った回数" + wincount.toString() + "回"
+                File(applicationContext.filesDir, fileWin).writer().use {
+                    it.write(wincount)
+                }
             }else if(a >= b) {
                 var c = 100 - b
                 var d = c / 2
@@ -99,7 +119,10 @@ class MainActivity : AppCompatActivity() {
                 resultText.text = "勝ち"
                 enemyText.text = "パー"
                 wincount += 1
-                winCount.text = "勝った回数" + wincount.toString() + "回"
+                winText.text = "勝った回数" + wincount.toString() + "回"
+                File(applicationContext.filesDir, fileWin).writer().use {
+                    it.write(wincount)
+                }
             }else if(a >= b) {
                 var c = 100 - b
                 var d = c / 2
