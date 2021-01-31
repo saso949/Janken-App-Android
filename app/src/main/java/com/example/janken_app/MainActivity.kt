@@ -1,5 +1,6 @@
 package com.example.janken_app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SeekBar
@@ -86,6 +87,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        setButton.setOnClickListener(){
+            val goSecound = Intent(this, activity_secound::class.java)
+            goSecound.putExtra("TEXT_KEY","")
+            startActivity(goSecound)
+
         }
 
+
+
+
+
+
+
+        }
     }
