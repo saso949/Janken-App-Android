@@ -28,15 +28,13 @@ class MainActivity : AppCompatActivity() {
 
 
         var fileWin = "winCount.txt"
-        
 
         var fileee = File(applicationContext.filesDir,"winCount.txt")
         if (fileee.exists()){
-            val contents2 = fileee.bufferedReader().use(BufferedReader::readText)
+            val contents2 = fileee.bufferedReader().use(BufferedReader::read) //←こいつがreadTextだとエラーが出るっぽい コピペの弊害が......
             wincount = contents2.toInt()
         }
         winText.text = "勝った回数" + wincount.toString() + "回"
-
 
         if (count == "on"){
             winText.visibility = View.VISIBLE
