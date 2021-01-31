@@ -3,6 +3,7 @@ package com.example.janken_app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -11,6 +12,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var b = 0
+        val count = intent.getStringExtra("ch")
+
+        if (count == "on"){
+            Log.d("aa","onだよ")
+        }else if(count == "off"){
+
+        }
 
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -89,7 +97,7 @@ class MainActivity : AppCompatActivity() {
 
         setButton.setOnClickListener(){
             val goSecound = Intent(this, secoundActivity::class.java)
-            goSecound.putExtra("TEXT_KEY","")
+            goSecound.putExtra("ch",count)
             startActivity(goSecound)
 
         }
