@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         setButton.setOnClickListener(){
-            val goSecound = Intent(this, activity_secound::class.java)
+            val goSecound = Intent(this, secoundActivity::class.java)
             goSecound.putExtra("TEXT_KEY","")
             startActivity(goSecound)
 
