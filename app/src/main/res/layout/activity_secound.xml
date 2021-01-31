@@ -6,4 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".activity_secound">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="197dp"
+        tools:layout_editor_absoluteY="370dp">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="保存して終了" />
+
+            <Switch
+                android:id="@+id/countSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="勝った回数を数える" />
+
+            <Switch
+                android:id="@+id/adSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="広告非表示" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
