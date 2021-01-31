@@ -6,19 +6,28 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.BufferedReader
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var b = 0
-        val count = intent.getStringExtra("ch")
+        var count = ""
+
+        val readFile = File(applicationContext.filesDir,"count.txt")
+        if(readFile.exists()){
+            val contents = readFile.bufferedReader().use(BufferedReader::readText)
+            count = contents
+        }
 
         if (count == "on"){
-            Log.d("aa","onだよ")
+
         }else if(count == "off"){
 
         }
+
 
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -97,7 +106,6 @@ class MainActivity : AppCompatActivity() {
 
         setButton.setOnClickListener(){
             val goSecound = Intent(this, secoundActivity::class.java)
-            goSecound.putExtra("ch",count)
             startActivity(goSecound)
 
         }
