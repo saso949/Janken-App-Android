@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var b = 0
         var count = ""
+        var wincount = 0
 
         val readFile = File(applicationContext.filesDir,"count.txt")
         if(readFile.exists()){
@@ -23,9 +25,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (count == "on"){
+            winCount.visibility = View.VISIBLE
 
-        }else if(count == "off"){
-
+        }else{
+            winCount.visibility = View.INVISIBLE
         }
 
 
@@ -52,6 +55,9 @@ class MainActivity : AppCompatActivity() {
             if (a <= b){
                 resultText.text = "勝ち"
                 enemyText.text = "チョキ"
+                wincount += 1
+                winCount.text = "勝った回数" + wincount.toString() + "回"
+
             }else if(a >= b) {
                 var c = 100 - b
                 var d = c / 2
@@ -71,6 +77,8 @@ class MainActivity : AppCompatActivity() {
             if (a <= b){
                 resultText.text = "勝ち"
                 enemyText.text = "グー"
+                wincount += 1
+                winCount.text = "勝った回数" + wincount.toString() + "回"
             }else if(a >= b) {
                 var c = 100 - b
                 var d = c / 2
@@ -90,6 +98,8 @@ class MainActivity : AppCompatActivity() {
             if (a <= b){
                 resultText.text = "勝ち"
                 enemyText.text = "パー"
+                wincount += 1
+                winCount.text = "勝った回数" + wincount.toString() + "回"
             }else if(a >= b) {
                 var c = 100 - b
                 var d = c / 2
