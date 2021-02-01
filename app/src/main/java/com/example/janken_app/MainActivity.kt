@@ -19,27 +19,26 @@ class MainActivity : AppCompatActivity() {
         var wincount = 0
 
 
-        val readFile = File(applicationContext.filesDir,"count.txt")
-        if(readFile.exists()){
+        val readFile = File(applicationContext.filesDir, "count.txt")
+        if (readFile.exists()) {
             val contents = readFile.bufferedReader().use(BufferedReader::readText)
             count = contents
         }
 
 
-
         var fileWin = "winCount.txt"
 
-        var fileee = File(applicationContext.filesDir,"winCount.txt")
-        if (fileee.exists()){
+        var fileee = File(applicationContext.filesDir, "winCount.txt")
+        if (fileee.exists()) {
             val contents2 = fileee.bufferedReader().use(BufferedReader::read) //←こいつがreadTextだとエラーが出るっぽい コピペの弊害が......
             wincount = contents2.toInt()
         }
         winText.text = "勝った回数" + wincount.toString() + "回"
 
-        if (count == "on"){
+        if (count == "on") {
             winText.visibility = View.VISIBLE
 
-        }else{
+        } else {
             winText.visibility = View.INVISIBLE
         }
 
@@ -62,9 +61,9 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        guButton.setOnClickListener(){
+        guButton.setOnClickListener() {
             var a = (0..100).random()
-            if (a <= b){
+            if (a <= b) {
                 resultText.text = "勝ち"
                 enemyText.text = "チョキ"
                 wincount += 1
@@ -73,23 +72,23 @@ class MainActivity : AppCompatActivity() {
                     it.write(wincount)
                 }
 
-            }else if(a >= b) {
+            } else if (a >= b) {
                 var c = 100 - b
                 var d = c / 2
                 var e = (0..c).random()
-                if (e >= d){
+                if (e >= d) {
                     resultText.text = "アイコ"
                     enemyText.text = "グー"
-                }else if (e <= d){
+                } else if (e <= d) {
                     resultText.text = "負け"
                     enemyText.text = "パー"
                 }
             }
         }
 
-        paButton.setOnClickListener(){
+        paButton.setOnClickListener() {
             var a = (0..100).random()
-            if (a <= b){
+            if (a <= b) {
                 resultText.text = "勝ち"
                 enemyText.text = "グー"
                 wincount += 1
@@ -97,23 +96,23 @@ class MainActivity : AppCompatActivity() {
                 File(applicationContext.filesDir, fileWin).writer().use {
                     it.write(wincount)
                 }
-            }else if(a >= b) {
+            } else if (a >= b) {
                 var c = 100 - b
                 var d = c / 2
                 var e = (0..c).random()
-                if (e >= d){
+                if (e >= d) {
                     resultText.text = "アイコ"
                     enemyText.text = "パー"
-                }else if (e <= d){
+                } else if (e <= d) {
                     resultText.text = "負け"
                     enemyText.text = "チョキ"
                 }
             }
         }
 
-        chokiButton.setOnClickListener(){
+        chokiButton.setOnClickListener() {
             var a = (0..100).random()
-            if (a <= b){
+            if (a <= b) {
                 resultText.text = "勝ち"
                 enemyText.text = "パー"
                 wincount += 1
@@ -121,31 +120,31 @@ class MainActivity : AppCompatActivity() {
                 File(applicationContext.filesDir, fileWin).writer().use {
                     it.write(wincount)
                 }
-            }else if(a >= b) {
+            } else if (a >= b) {
                 var c = 100 - b
                 var d = c / 2
                 var e = (0..c).random()
-                if (e >= d){
+                if (e >= d) {
                     resultText.text = "アイコ"
                     enemyText.text = "チョキ"
-                }else if (e <= d){
+                } else if (e <= d) {
                     resultText.text = "負け"
                     enemyText.text = "グー"
                 }
             }
         }
 
-        setButton.setOnClickListener(){
+        setButton.setOnClickListener() {
             val goSecound = Intent(this, secoundActivity::class.java)
             startActivity(goSecound)
-
         }
 
+        resetButton.setOnClickListener() {
+            wincount = 0
+            winText.text = "勝った回数" + wincount.toString() + "回"
+            File(applicationContext.filesDir, fileWin).writer().use {
+                it.write(wincount)
 
-
-
-
-
-
+            }
         }
-    }
+    }}
