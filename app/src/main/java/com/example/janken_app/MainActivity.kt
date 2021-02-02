@@ -15,14 +15,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var b = 0
-        var count = ""
+        var count1 = ""
         var wincount = 0
 
 
-        val readFile = File(applicationContext.filesDir, "count.txt")
+        val readFile = File(applicationContext.filesDir, "count1.txt")
         if (readFile.exists()) {
             val contents = readFile.bufferedReader().use(BufferedReader::readText)
-            count = contents
+            count1 = contents
         }
 
 
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         }
         winText.text = "勝った回数" + wincount.toString() + "回"
 
-        if (count == "on") {
+        if (count1 == "on") {
             winText.visibility = View.VISIBLE
 
         } else {
