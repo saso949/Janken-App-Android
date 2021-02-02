@@ -27,6 +27,12 @@
             android:text="勝った回数を表示" />
 
         <Switch
+            android:id="@+id/lostSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="負けた回数を表示"/>
+
+        <Switch
             android:id="@+id/adSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
