@@ -28,13 +28,14 @@ class MainActivity : AppCompatActivity() {
             count1 = contents
         }
 
-        var reedLost = File(applicationContext.filesDir, "count1.txt")
-        if (readFile.exists()) {
-            val lostContent = readFile.bufferedReader().use(BufferedReader::readText)
+        var readLost = File(applicationContext.filesDir, "count2.txt")
+        if (readLost.exists()) {
+            val lostContent = readLost.bufferedReader().use(BufferedReader::readText)
             count2 = lostContent
         }
 
         var fileWin = "winCount.txt"
+        var fileLost = "lostCount.txt"
 
         var fileee = File(applicationContext.filesDir, "winCount.txt")
         if (fileee.exists()) {
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
             wincount = contents2.toInt()
         }
         winText.text = "勝った回数" + wincount.toString() + "回"
+        lostText.text = "負けた回数" + lostCount.toString() + "回"
 
         if (count1 == "on") {
             winText.visibility = View.VISIBLE
@@ -79,10 +81,13 @@ class MainActivity : AppCompatActivity() {
             if (a <= b) {
                 resultText.text = "勝ち"
                 enemyText.text = "チョキ"
+
                 wincount += 1
                 winText.text = "勝った回数" + wincount.toString() + "回"
                 File(applicationContext.filesDir, fileWin).writer().use {
                     it.write(wincount)
+
+
                 }
 
             } else if (a >= b) {
@@ -95,6 +100,13 @@ class MainActivity : AppCompatActivity() {
                 } else if (e <= d) {
                     resultText.text = "負け"
                     enemyText.text = "パー"
+
+                    lostCount += 1
+                    lostText.text = "負けた回数" + lostCount.toString() + "回"
+                    File(applicationContext.filesDir, fileWin).writer().use {
+                        it.write(lostCount)}
+
+
                 }
             }
         }
@@ -106,9 +118,10 @@ class MainActivity : AppCompatActivity() {
                 enemyText.text = "グー"
                 wincount += 1
                 winText.text = "勝った回数" + wincount.toString() + "回"
-                File(applicationContext.filesDir, fileWin).writer().use {
+                File(applicationContext.filesDir, fileLost).writer().use {
                     it.write(wincount)
                 }
+
             } else if (a >= b) {
                 var c = 100 - b
                 var d = c / 2
@@ -119,6 +132,14 @@ class MainActivity : AppCompatActivity() {
                 } else if (e <= d) {
                     resultText.text = "負け"
                     enemyText.text = "チョキ"
+
+                    lostCount += 1
+                    lostText.text = "負けた回数" + lostCount.toString() + "回"
+                    File(applicationContext.filesDir, fileWin).writer().use {
+                        it.write(lostCount)}
+
+
+
                 }
             }
         }
@@ -128,10 +149,12 @@ class MainActivity : AppCompatActivity() {
             if (a <= b) {
                 resultText.text = "勝ち"
                 enemyText.text = "パー"
+
                 wincount += 1
                 winText.text = "勝った回数" + wincount.toString() + "回"
                 File(applicationContext.filesDir, fileWin).writer().use {
                     it.write(wincount)
+
                 }
             } else if (a >= b) {
                 var c = 100 - b
@@ -143,6 +166,13 @@ class MainActivity : AppCompatActivity() {
                 } else if (e <= d) {
                     resultText.text = "負け"
                     enemyText.text = "グー"
+
+                    lostCount += 1
+                    lostText.text = "負けた回数" + lostCount.toString() + "回"
+                    File(applicationContext.filesDir, fileWin).writer().use {
+                        it.write(lostCount)}
+
+
                 }
             }
         }
@@ -157,6 +187,8 @@ class MainActivity : AppCompatActivity() {
             winText.text = "勝った回数" + wincount.toString() + "回"
             File(applicationContext.filesDir, fileWin).writer().use {
                 it.write(wincount)
+
+
 
             }
         }

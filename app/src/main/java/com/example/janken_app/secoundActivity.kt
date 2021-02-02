@@ -23,6 +23,11 @@ class secoundActivity : AppCompatActivity() {
             count1 = readFile.bufferedReader().use(BufferedReader::readText)
         }
 
+        var readLost = File(applicationContext.filesDir, "count1.txt")
+        if (readLost.exists()) {
+            val lostContent = readLost.bufferedReader().use(BufferedReader::readText)
+            count2 = lostContent
+        }
 
         if (count1 == "on"){
             countSwitch.isChecked = true
@@ -31,6 +36,7 @@ class secoundActivity : AppCompatActivity() {
             Log.d("","あjsd；fkじゃs")
             countSwitch.isChecked = false
         }
+
 
 
 
@@ -51,7 +57,7 @@ class secoundActivity : AppCompatActivity() {
         lostSwitch.setOnCheckedChangeListener(){buttonView , isChecked ->
             if(isChecked.toString() == "true"){
                 count2 = "on"
-            }else if(isChecked.toString() == "fasle"){
+            }else if(isChecked.toString() == "false"){
                 count2 = "off"
             }
         }
