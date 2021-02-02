@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.SeekBar
+import androidx.appcompat.widget.ViewUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
 import java.io.File
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         var b = 0
         var count1 = ""
         var wincount = 0
+        var count2 = ""
+        var lostCount = 0
 
 
         val readFile = File(applicationContext.filesDir, "count1.txt")
@@ -25,6 +28,11 @@ class MainActivity : AppCompatActivity() {
             count1 = contents
         }
 
+        var reedLost = File(applicationContext.filesDir, "count1.txt")
+        if (readFile.exists()) {
+            val lostContent = readFile.bufferedReader().use(BufferedReader::readText)
+            count2 = lostContent
+        }
 
         var fileWin = "winCount.txt"
 
@@ -42,6 +50,11 @@ class MainActivity : AppCompatActivity() {
             winText.visibility = View.INVISIBLE
         }
 
+        if (count2 == "on"){
+            lostText.visibility = View.VISIBLE
+        }else{
+            lostText.visibility = View.INVISIBLE
+        }
 
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
