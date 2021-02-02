@@ -18,12 +18,12 @@ class secoundActivity : AppCompatActivity() {
         var count2 = ""
 
 
-        val readFile = File(applicationContext.filesDir,"count.txt")
+        val readFile = File(applicationContext.filesDir,"count1.txt")
         if(readFile.exists()){
             count1 = readFile.bufferedReader().use(BufferedReader::readText)
         }
 
-        var readLost = File(applicationContext.filesDir, "count1.txt")
+        var readLost = File(applicationContext.filesDir, "count2.txt")
         if (readLost.exists()) {
             val lostContent = readLost.bufferedReader().use(BufferedReader::readText)
             count2 = lostContent
@@ -35,6 +35,12 @@ class secoundActivity : AppCompatActivity() {
         }else if(count1 == "off"){
             Log.d("","あjsd；fkじゃs")
             countSwitch.isChecked = false
+        }
+
+        if (count2 == "on"){
+            lostSwitch.isChecked = true
+        }else if(count2 == "off"){
+            lostSwitch.isChecked = false
         }
 
 
