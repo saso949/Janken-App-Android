@@ -197,6 +197,11 @@ class MainActivity : AppCompatActivity() {
                 it.write(wincount)
 
 
+             lostCount = 0
+             lostText.text = "負けた回数" + lostCount.toString() + "回"
+                File(applicationContext.filesDir, fileLost).writer().use {
+                    it.write(lostCount)
+                }
 
             }
         }
