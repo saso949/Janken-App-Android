@@ -1,13 +1,12 @@
 package com.example.janken_app
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_secound.*
 import java.io.BufferedReader
 import java.io.File
-import java.util.function.LongFunction
 
 class secoundActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +17,8 @@ class secoundActivity : AppCompatActivity() {
         var count2 = ""
 
 
-        val readFile = File(applicationContext.filesDir,"count1.txt")
-        if(readFile.exists()){
+        val readFile = File(applicationContext.filesDir, "count1.txt")
+        if (readFile.exists()) {
             count1 = readFile.bufferedReader().use(BufferedReader::readText)
         }
 
@@ -29,17 +28,17 @@ class secoundActivity : AppCompatActivity() {
             count2 = lostContent
         }
 
-        if (count1 == "on"){
+        if (count1 == "on") {
             countSwitch.isChecked = true
-            Log.d("","a;sdkfj")
-        }else if(count1 == "off"){
-            Log.d("","あjsd；fkじゃs")
+            Log.d("", "a;sdkfj")
+        } else if (count1 == "off") {
+            Log.d("", "あjsd；fkじゃs")
             countSwitch.isChecked = false
         }
 
-        if (count2 == "on"){
+        if (count2 == "on") {
             lostSwitch.isChecked = true
-        }else if(count2 == "off"){
+        } else if (count2 == "off") {
             lostSwitch.isChecked = false
         }
 
@@ -47,30 +46,30 @@ class secoundActivity : AppCompatActivity() {
 
 
 
-        countSwitch.setOnCheckedChangeListener(){buttonView, isChecked ->
+        countSwitch.setOnCheckedChangeListener() { buttonView, isChecked ->
 
             //switchがONになったのを検出
-            if (isChecked.toString() == "true"){
-                Log.d("aaaa","a;sdfkja;")
+            if (isChecked.toString() == "true") {
+                Log.d("aaaa", "a;sdfkja;")
                 count1 = "on"
                 //switchがoffになったのを検出
-            }else if(isChecked.toString() == "false"){
+            } else if (isChecked.toString() == "false") {
                 count1 = "off"
-                Log.d("a;sdfk","ほほい")
+                Log.d("a;sdfk", "ほほい")
             }
         }
 
-        lostSwitch.setOnCheckedChangeListener(){buttonView , isChecked ->
-            if(isChecked.toString() == "true"){
+        lostSwitch.setOnCheckedChangeListener() { buttonView, isChecked ->
+            if (isChecked.toString() == "true") {
                 count2 = "on"
-            }else if(isChecked.toString() == "false"){
+            } else if (isChecked.toString() == "false") {
                 count2 = "off"
             }
         }
 
 
 
-        backButton.setOnClickListener(){
+        backButton.setOnClickListener() {
             val goMain = Intent(this, MainActivity::class.java)
             startActivity(goMain)
 
@@ -84,11 +83,10 @@ class secoundActivity : AppCompatActivity() {
                 File(applicationContext.filesDir, lostFile).writer().use {
                     it.write(count2)
 
+                }
             }
+
+
         }
-
-
-
-
-
-    }}}
+    }
+}

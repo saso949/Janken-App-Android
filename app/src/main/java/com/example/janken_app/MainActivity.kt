@@ -1,12 +1,10 @@
 package com.example.janken_app
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.SeekBar
-import androidx.appcompat.widget.ViewUtils
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
 import java.io.File
@@ -55,9 +53,9 @@ class MainActivity : AppCompatActivity() {
             winText.visibility = View.INVISIBLE
         }
 
-        if (count2 == "on"){
+        if (count2 == "on") {
             lostText.visibility = View.VISIBLE
-        }else{
+        } else {
             lostText.visibility = View.INVISIBLE
         }
 
@@ -75,9 +73,11 @@ class MainActivity : AppCompatActivity() {
                 parcentView.text = progress.toString() + "%"
                 b = progress.toInt()
             }
+
             // つまみがタッチされた時に呼ばれる
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
             }
+
             // つまみが離された時に呼ばれる
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
@@ -112,7 +112,8 @@ class MainActivity : AppCompatActivity() {
                     lostCount += 1
                     lostText.text = "負けた回数" + lostCount.toString() + "回"
                     File(applicationContext.filesDir, fileLost).writer().use {
-                        it.write(lostCount)}
+                        it.write(lostCount)
+                    }
 
 
                 }
@@ -144,8 +145,8 @@ class MainActivity : AppCompatActivity() {
                     lostCount += 1
                     lostText.text = "負けた回数" + lostCount.toString() + "回"
                     File(applicationContext.filesDir, fileLost).writer().use {
-                        it.write(lostCount)}
-
+                        it.write(lostCount)
+                    }
 
 
                 }
@@ -178,7 +179,8 @@ class MainActivity : AppCompatActivity() {
                     lostCount += 1
                     lostText.text = "負けた回数" + lostCount.toString() + "回"
                     File(applicationContext.filesDir, fileLost).writer().use {
-                        it.write(lostCount)}
+                        it.write(lostCount)
+                    }
 
 
                 }
@@ -197,12 +199,13 @@ class MainActivity : AppCompatActivity() {
                 it.write(wincount)
 
 
-             lostCount = 0
-             lostText.text = "負けた回数" + lostCount.toString() + "回"
+                lostCount = 0
+                lostText.text = "負けた回数" + lostCount.toString() + "回"
                 File(applicationContext.filesDir, fileLost).writer().use {
                     it.write(lostCount)
                 }
 
             }
         }
-    }}
+    }
+}
