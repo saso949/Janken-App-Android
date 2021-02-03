@@ -59,6 +59,12 @@ class MainActivity : AppCompatActivity() {
             lostText.visibility = View.INVISIBLE
         }
 
+        if(count1 == "off" && count2 == "off"){
+            resetButton.visibility = View.INVISIBLE
+        }else{
+            resetButton.visibility = View.VISIBLE
+        }
+
         //アプリ起動時に数字を表示させるため
         winText.text = "勝った回数" + wincount.toString() + "回"
         lostText.text = "負けた回数" + lostCount.toString() + "回"
