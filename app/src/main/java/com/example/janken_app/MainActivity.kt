@@ -46,6 +46,15 @@ class MainActivity : AppCompatActivity() {
             lostCount = contents2.toInt()
         }
 
+        var readSeek = File(applicationContext.filesDir, "seekbar.txt")
+        if (readSeek.exists()){
+            var contents3 = readSeek.bufferedReader().use(BufferedReader::read)
+            b = contents3.toInt()
+        }
+
+
+
+
         if (count1 == "on") {
             winText.visibility = View.VISIBLE
 
@@ -65,9 +74,19 @@ class MainActivity : AppCompatActivity() {
             resetButton.visibility = View.VISIBLE
         }
 
+
+
+
         //アプリ起動時に数字を表示させるため
         winText.text = "勝った回数" + wincount.toString() + "回"
         lostText.text = "負けた回数" + lostCount.toString() + "回"
+
+        
+
+
+
+
+
 
         //それぞれ勝ち負けの回数を記録するファイル名
         var fileWin = "winCount.txt"
