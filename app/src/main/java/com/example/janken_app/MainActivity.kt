@@ -82,6 +82,7 @@ class MainActivity : AppCompatActivity() {
         lostText.text = "負けた回数" + lostCount.toString() + "回"
 
         parcentView.text = b.toString() + "%"
+        seekBar.progress = b
 
 
         //それぞれ勝ち負けの回数を記録するファイル名
