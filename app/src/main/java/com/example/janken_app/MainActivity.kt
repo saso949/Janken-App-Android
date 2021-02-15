@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         //それぞれ勝ち負けの回数を記録するファイル名
         var fileWin = "winCount.txt"
         var fileLost = "lostCount.txt"
+        var seekbar = "seekbar.txt"
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             // 値が変更された時に呼ばれる
