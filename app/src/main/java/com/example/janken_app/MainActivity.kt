@@ -81,17 +81,15 @@ class MainActivity : AppCompatActivity() {
         winText.text = "勝った回数" + wincount.toString() + "回"
         lostText.text = "負けた回数" + lostCount.toString() + "回"
 
-        
-
-
-
-
+        parcentView.text = b.toString() + "%"
 
 
         //それぞれ勝ち負けの回数を記録するファイル名
         var fileWin = "winCount.txt"
         var fileLost = "lostCount.txt"
         var fileSeekBar = "seekbar.txt"
+
+
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             // 値が変更された時に呼ばれる
@@ -111,6 +109,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
+
+
+
 
 
         guButton.setOnClickListener() {
