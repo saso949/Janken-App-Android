@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var b = 0
-        var count1 = ""
+        var count1 = "off"
         var wincount = 0
-        var count2 = ""
+        var count2 = "off"
         var lostCount = 0
 
 
