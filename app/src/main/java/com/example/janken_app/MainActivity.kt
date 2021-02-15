@@ -87,6 +87,9 @@ class MainActivity : AppCompatActivity() {
 
             // つまみが離された時に呼ばれる
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                File(applicationContext.filesDir, fileSeekBar).writer().use {
+                    it.write(b)
+                }
             }
         })
 
