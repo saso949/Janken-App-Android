@@ -52,7 +52,6 @@ AndroidStudioでJanken-App-Androidプロジェクトを作成し、そのプロ�
 
 
 * [saso949](https://github.com/saso949)
-* saso949.git@gmail.com
 
 # License
 "Janken-App-Android" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
