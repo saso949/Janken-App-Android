@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         var fileee = File(applicationContext.filesDir, "winCount.txt")
         if (fileee.exists()) {
-            val contents2 = fileee.bufferedReader().use(BufferedReader::read) //←こいつがreadTextだとエラーが出るっぽい コピペの弊害が......
+            val contents2 = fileee.bufferedReader().use(BufferedReader::read) //←こいつがreadTextだとStringで読み込まれるっぽい コピペの弊害が...
             wincount = contents2.toInt()
         }
 
@@ -116,10 +116,11 @@ class MainActivity : AppCompatActivity() {
 
         guButton.setOnClickListener {
             var a = (0..100).random()
+            var c = 100 - b
+            var d = c / 2
+            var e = (0..c).random()
+
             if (a == 0 && b == 0) {
-                var c = 100 - b
-                var d = c / 2
-                var e = (0..c).random()
                 if (e >= d) {
                     resultText.text = "アイコ"
                     enemyText.text = "グー"
@@ -147,9 +148,6 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 } else if (a >= b) {
-                    var c = 100 - b
-                    var d = c / 2
-                    var e = (0..c).random()
                     if (e >= d) {
                         resultText.text = "アイコ"
                         enemyText.text = "グー"
@@ -169,10 +167,11 @@ class MainActivity : AppCompatActivity() {
 
         paButton.setOnClickListener {
             var a = (0..100).random()
+            var c = 100 - b
+            var d = c / 2
+            var e = (0..c).random()
+
             if (a == 0 && b == 0) {
-                var c = 100 - b
-                var d = c / 2
-                var e = (0..c).random()
                 if (e >= d) {
                     resultText.text = "アイコ"
                     enemyText.text = "パー"
@@ -198,9 +197,6 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 } else if (a >= b) {
-                    var c = 100 - b
-                    var d = c / 2
-                    var e = (0..c).random()
                     if (e >= d) {
                         resultText.text = "アイコ"
                         enemyText.text = "パー"
@@ -220,10 +216,11 @@ class MainActivity : AppCompatActivity() {
 
         chokiButton.setOnClickListener {
             var a = (0..100).random()
+            var c = 100 - b
+            var d = c / 2
+            var e = (0..c).random()
+
             if (a == 0 && b == 0) {
-                var c = 100 - b
-                var d = c / 2
-                var e = (0..c).random()
                 if (e >= d) {
                     resultText.text = "アイコ"
                     enemyText.text = "チョキ"
@@ -249,9 +246,6 @@ class MainActivity : AppCompatActivity() {
 
                     }
                 } else if (a >= b) {
-                    var c = 100 - b
-                    var d = c / 2
-                    var e = (0..c).random()
                     if (e >= d) {
                         resultText.text = "アイコ"
                         enemyText.text = "チョキ"
