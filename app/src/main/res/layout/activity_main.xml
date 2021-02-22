@@ -119,16 +119,17 @@
 
     <ImageButton
         android:id="@+id/setButton"
-        android:layout_width="64dp"
-        android:layout_height="58dp"
+        android:layout_width="30dp"
+        android:layout_height="29dp"
         android:background="#00FFFFFF"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@android:drawable/ic_dialog_info" />
+        app:layout_constraintVertical_bias="0.014"
+        app:srcCompat="@drawable/setting" />
 
     <TextView
         android:id="@+id/winText"
@@ -162,10 +163,10 @@
         android:layout_height="40dp"
         android:text="リセット"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
+        app:layout_constraintVertical_bias="0.965" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
