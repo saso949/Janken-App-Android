@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         var readSeek = File(applicationContext.filesDir, "seekbar.txt")
-        if (readSeek.exists()){
+        if (readSeek.exists()) {
             var contents3 = readSeek.bufferedReader().use(BufferedReader::read)
             b = contents3.toInt()
         }
@@ -68,13 +68,11 @@ class MainActivity : AppCompatActivity() {
             lostText.visibility = View.INVISIBLE
         }
 
-        if(count1 == "off" && count2 == "off"){
+        if (count1 == "off" && count2 == "off") {
             resetButton.visibility = View.INVISIBLE
-        }else{
+        } else {
             resetButton.visibility = View.VISIBLE
         }
-
-
 
 
         //アプリ起動時に数字を表示させるため
