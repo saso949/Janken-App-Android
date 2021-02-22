@@ -46,7 +46,7 @@ class secoundActivity : AppCompatActivity() {
 
 
 
-        countSwitch.setOnCheckedChangeListener() { _, isChecked ->
+        countSwitch.setOnCheckedChangeListener { _, isChecked ->
 
             //switchがONになったのを検出
             if (isChecked.toString() == "true") {
@@ -59,7 +59,7 @@ class secoundActivity : AppCompatActivity() {
             }
         }
 
-        lostSwitch.setOnCheckedChangeListener() { _, isChecked ->
+        lostSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked.toString() == "true") {
                 count2 = "on"
             } else if (isChecked.toString() == "false") {
@@ -69,7 +69,7 @@ class secoundActivity : AppCompatActivity() {
 
 
 
-        backButton.setOnClickListener() {
+        backButton.setOnClickListener {
             val goMain = Intent(this, MainActivity::class.java)
             startActivity(goMain)
 
