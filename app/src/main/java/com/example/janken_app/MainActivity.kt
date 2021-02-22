@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         var fileee = File(applicationContext.filesDir, "winCount.txt")
         if (fileee.exists()) {
-            val contents2 = fileee.bufferedReader().use(BufferedReader::read) //←こいつがreadTextだとエラーが出るっぽい コピペの弊害が......
+            val contents2 = fileee.bufferedReader().use(BufferedReader::read) //←こいつがreadTextだとStringで読み込まれるっぽい コピペの弊害が...
             wincount = contents2.toInt()
         }
 
@@ -116,22 +116,11 @@ class MainActivity : AppCompatActivity() {
 
         guButton.setOnClickListener {
             var a = (0..100).random()
-            if (a <= b) {
-                resultText.text = "勝ち"
-                enemyText.text = "チョキ"
+            var c = 100 - b
+            var d = c / 2
+            var e = (0..c).random()
 
-                wincount += 1
-                winText.text = "勝った回数" + wincount.toString() + "回"
-                File(applicationContext.filesDir, fileWin).writer().use {
-                    it.write(wincount)
-
-
-                }
-
-            } else if (a >= b) {
-                var c = 100 - b
-                var d = c / 2
-                var e = (0..c).random()
+            if (a == 0 && b == 0) {
                 if (e >= d) {
                     resultText.text = "アイコ"
                     enemyText.text = "グー"
@@ -144,27 +133,45 @@ class MainActivity : AppCompatActivity() {
                     File(applicationContext.filesDir, fileLost).writer().use {
                         it.write(lostCount)
                     }
+                }
+            } else {
+                if (a <= b) {
+                    resultText.text = "勝ち"
+                    enemyText.text = "チョキ"
+
+                    wincount += 1
+                    winText.text = "勝った回数" + wincount.toString() + "回"
+                    File(applicationContext.filesDir, fileWin).writer().use {
+                        it.write(wincount)
 
 
+                    }
+
+                } else if (a >= b) {
+                    if (e >= d) {
+                        resultText.text = "アイコ"
+                        enemyText.text = "グー"
+                    } else if (e <= d) {
+                        resultText.text = "負け"
+                        enemyText.text = "パー"
+
+                        lostCount += 1
+                        lostText.text = "負けた回数" + lostCount.toString() + "回"
+                        File(applicationContext.filesDir, fileLost).writer().use {
+                            it.write(lostCount)
+                        }
+                    }
                 }
             }
         }
 
         paButton.setOnClickListener {
             var a = (0..100).random()
-            if (a <= b) {
-                resultText.text = "勝ち"
-                enemyText.text = "グー"
-                wincount += 1
-                winText.text = "勝った回数" + wincount.toString() + "回"
-                File(applicationContext.filesDir, fileLost).writer().use {
-                    it.write(wincount)
-                }
+            var c = 100 - b
+            var d = c / 2
+            var e = (0..c).random()
 
-            } else if (a >= b) {
-                var c = 100 - b
-                var d = c / 2
-                var e = (0..c).random()
+            if (a == 0 && b == 0) {
                 if (e >= d) {
                     resultText.text = "アイコ"
                     enemyText.text = "パー"
@@ -177,28 +184,43 @@ class MainActivity : AppCompatActivity() {
                     File(applicationContext.filesDir, fileLost).writer().use {
                         it.write(lostCount)
                     }
+                }
+            } else {
 
+                if (a <= b) {
+                    resultText.text = "勝ち"
+                    enemyText.text = "グー"
+                    wincount += 1
+                    winText.text = "勝った回数" + wincount.toString() + "回"
+                    File(applicationContext.filesDir, fileLost).writer().use {
+                        it.write(wincount)
+                    }
 
+                } else if (a >= b) {
+                    if (e >= d) {
+                        resultText.text = "アイコ"
+                        enemyText.text = "パー"
+                    } else if (e <= d) {
+                        resultText.text = "負け"
+                        enemyText.text = "チョキ"
+
+                        lostCount += 1
+                        lostText.text = "負けた回数" + lostCount.toString() + "回"
+                        File(applicationContext.filesDir, fileLost).writer().use {
+                            it.write(lostCount)
+                        }
+                    }
                 }
             }
         }
 
         chokiButton.setOnClickListener {
             var a = (0..100).random()
-            if (a <= b) {
-                resultText.text = "勝ち"
-                enemyText.text = "パー"
+            var c = 100 - b
+            var d = c / 2
+            var e = (0..c).random()
 
-                wincount += 1
-                winText.text = "勝った回数" + wincount.toString() + "回"
-                File(applicationContext.filesDir, fileWin).writer().use {
-                    it.write(wincount)
-
-                }
-            } else if (a >= b) {
-                var c = 100 - b
-                var d = c / 2
-                var e = (0..c).random()
+            if (a == 0 && b == 0) {
                 if (e >= d) {
                     resultText.text = "アイコ"
                     enemyText.text = "チョキ"
@@ -211,8 +233,32 @@ class MainActivity : AppCompatActivity() {
                     File(applicationContext.filesDir, fileLost).writer().use {
                         it.write(lostCount)
                     }
+                }
+            } else {
+                if (a <= b) {
+                    resultText.text = "勝ち"
+                    enemyText.text = "パー"
 
+                    wincount += 1
+                    winText.text = "勝った回数" + wincount.toString() + "回"
+                    File(applicationContext.filesDir, fileWin).writer().use {
+                        it.write(wincount)
 
+                    }
+                } else if (a >= b) {
+                    if (e >= d) {
+                        resultText.text = "アイコ"
+                        enemyText.text = "チョキ"
+                    } else if (e <= d) {
+                        resultText.text = "負け"
+                        enemyText.text = "グー"
+
+                        lostCount += 1
+                        lostText.text = "負けた回数" + lostCount.toString() + "回"
+                        File(applicationContext.filesDir, fileLost).writer().use {
+                            it.write(lostCount)
+                        }
+                    }
                 }
             }
         }
