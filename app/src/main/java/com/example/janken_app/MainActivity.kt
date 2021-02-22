@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        guButton.setOnClickListener() {
+        guButton.setOnClickListener {
             var a = (0..100).random()
             if (a <= b) {
                 resultText.text = "勝ち"
@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        paButton.setOnClickListener() {
+        paButton.setOnClickListener {
             var a = (0..100).random()
             if (a <= b) {
                 resultText.text = "勝ち"
@@ -183,7 +183,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        chokiButton.setOnClickListener() {
+        chokiButton.setOnClickListener {
             var a = (0..100).random()
             if (a <= b) {
                 resultText.text = "勝ち"
@@ -217,12 +217,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        setButton.setOnClickListener() {
+        setButton.setOnClickListener {
             val goSecound = Intent(this, secoundActivity::class.java)
             startActivity(goSecound)
         }
 
-        resetButton.setOnClickListener() {
+        resetButton.setOnClickListener {
             wincount = 0
             winText.text = "勝った回数" + wincount.toString() + "回"
             File(applicationContext.filesDir, fileWin).writer().use {
